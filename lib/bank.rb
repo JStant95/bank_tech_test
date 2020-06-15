@@ -12,6 +12,14 @@ class Bank
   end
 
   def print_statement
-    "date || credit || debit || balance\n#{@statement_rows[0]}"
+    statement = "date || credit || debit || balance\n"
+    @statement_rows.reverse_each do |row|
+      if @statement_rows.first != row
+        statement += row + "\n"
+      else
+        statement += row
+      end
+    end
+    statement
   end
 end
