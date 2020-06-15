@@ -39,4 +39,21 @@ describe Bank do
       expect(@bank.print_statement).to eq(statement)
     end
   end
+
+  context "User makes a withdrawal" do
+    before(:each) do
+      @bank.deposit(2000, "15/06/2020")
+    end
+
+    it "Adjusts bank balance accordingly" do
+      @bank.withdraw(1000, "16/06/2020")
+      expect(@bank.balance).to eq(1000)
+    end
+
+    it "Updates statement accordingly" do
+      @bank.withdraw(1000, "16/06/2020")
+      statement = "date || credit || debit || balance\n16/06/2020 || || 1000.00 || 1000.00\n15/06/2020 || 2000.00 || || 2000.00"
+      expect(@bank.print_statement).to eq(statement)
+    end
+  end
 end

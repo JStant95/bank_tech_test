@@ -11,6 +11,11 @@ class Bank
     @statement_rows.push("#{date} || #{value}.00 || || #{balance}.00")
   end
 
+  def withdraw(value, date)
+    @balance -= value
+    @statement_rows.push("#{date} || || #{value}.00 || #{balance}.00")
+  end
+
   def print_statement
     statement = "date || credit || debit || balance\n"
     @statement_rows.reverse_each do |row|
