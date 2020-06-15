@@ -10,12 +10,13 @@
 
 I decided to just create the one class (Bank) rather than split deposits & wtihdrawals and printing the statement into two different classes. I felt that two class were overkill for this task, although appreciate the bank class doesn't 100% adhere to the SRP rule. 
 
-|Bank Class|
-| ----------- | ----------- |
-| Attributes | Methods |
-|Balance | deposit |
-| Statement| withdraw |
-| | print_statement |
+**Bank Class**
+
+|  Attributes |  Methods |   
+|---|---|
+| Balance  | deposit |  
+| Statement | withdraw |   
+|   | print_statement  | 
 
 **Input Output Examples**
 
@@ -47,44 +48,32 @@ Key learnings I took from these input output examples was that the statement was
 
 1. Start irb on terminal
 ```
-{ 
 irb
-}
 ```
 
 2. require bank.rb
 ```
-{ 
 require "./lib/bank"
-}
 ```
 
 3. Create instance of bank class
 ```
-{ 
 bank = Bank.new
-}
 ```
 
 4. To make a deposit call .deposit and pass the amount as an integer and date (in dd/mm/yyyy format) 
 ```
-{ 
 bank.deposit(1000, 15/06/2020)
-}
 ```
 
 5. To make a withdrawal call the withdraw method in the same way as deposit
-```
-{ 
+``` 
 bank.withdrawal(1000, 15/06/2020)
-}
 ```
 
 6. To print statement call print_statement 
 ```
-{ 
 bank.print_statement
-}
 ```
 
 **Running tests** 
